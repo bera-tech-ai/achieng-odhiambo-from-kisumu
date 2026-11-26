@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achieng Odhiambo | Photographer – Kisumu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #faf9f7;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* header */
+    header {
+      padding: 24px 0;
+      background: #ffffff;
+      border-bottom: 1px solid #eae6e0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c2c2c;
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      font-weight: 400;
+      color: #8b7d6b;
+    }
+    nav a {
+      margin-left: 32px;
+      text-decoration: none;
+      color: #3a3a3a;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #b8956a;
+    }
+    @media (max-width: 680px) {
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 12px;
+      }
+      nav a {
+        margin-left: 0;
+        font-size: 0.85rem;
+      }
+      .logo {
+        font-size: 1.4rem;
+      }
+    }
+    /* hero */
+    .hero {
+      min-height: 90vh;
+      background: linear-gradient(135deg, #d9cec0 0%, #a18e7a 50%, #7a6652 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      /* image placeholder: feel of a vast lake landscape */
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23d9cec0"/><stop offset="50%" stop-color="%23a18e7a"/><stop offset="100%" stop-color="%237a6652"/></linearGradient></defs><rect width="100%" height="100%" fill="url(%23g)"/></svg>');
+      background-size: cover;
+      background-blend-mode: overlay;
+    }
+    .hero-content {
+      max-width: 720px;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 16px;
+      backdrop-filter: blur(3px);
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.4rem; }
+    }
+    /* sections */
+    section {
+      padding: 80px 0;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 48px;
+      text-align: center;
+      font-weight: 600;
+      color: #1e1e1e;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: #b8956a;
+      margin: 16px auto 0;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .image-placeholder {
+      background: #e8dfd4;
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7a6652;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      background-size: cover;
+      background-position: center;
+    }
+    .big-placeholder {
+      min-height: 420px;
+    }
+    .bio-text p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      color: #3a3a3a;
+    }
+    .bio-text strong {
+      color: #5f4e3c;
+    }
+    /* wedding / event */
+    .detail-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+    .detail-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .detail-card p {
+      font-size: 1rem;
+      color: #4a4a4a;
+      margin-bottom: 8px;
+    }
+    /* nature gallery grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #d6ccbf;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 20px;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+    .gallery-item h4 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      background: rgba(0,0,0,0.3);
+      padding: 8px 18px;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+    }
+    @media (max-width: 800px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    /* prices */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .pricing-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 36px 28px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.05);
+      border: 1px solid #ede7e0;
+      transition: transform 0.2s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+    }
+    .pricing-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #2c2c2c;
+    }
+    .price {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #b8956a;
+      margin: 16px 0;
+    }
+    .price small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #6a5e50;
+    }
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+    .pricing-card li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0ebe5;
+      display: flex;: align-items: center;
+    }
+    .pricing-card li:last-child {
+      border-bottom: none;
+    }
+    .pricing-card li::before {
+      content: "✓";
+      color: #b8956a;
+      margin-right: 10px;
+      font-weight: 700;
+    }
+    .pricing-card .btn {
+      margin-top: 24px;
+      display: inline-block;
+      background: #b8956a;
+      color: #fff;
+      padding: 12px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      transition: background 0.3s;
+    }
+    .pricing-card .btn:hover {
+      background: #9e7b54;
+    }
+
+    /* Contact */
+    #contact {
+      background: #fff;
+    }
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .contact-info h3 {
+      font-size: 1.6rem;
+      color: #2c2c2c;
+      margin-bottom: 20px;
+    }
+    .contact-info p {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-info i {
+      color: #b8956a;
+      width: 20px;
+    }
+    .contact-info a {
+      color: #2c2c2c;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      color: #b8956a;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #faf8f5;
+      transition: border 0.3s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #b8956a;
+    }
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: #b8956a;
+      color: #fff;
+      border: none;
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: background 0.3s;
+    }
+    .contact-form button:hover {
+      background: #9e7b54;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c2c2c;
+      color: #ccc;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    .social-links {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social-links a {
+      color: #ccc;
+      font-size: 1.4rem;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #b8956a;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul { display: none; flex-direction: column; position: absolute; top: 70px; right: 0; background: rgba(44,44,44,0.98); width: 100%; text-align: center; padding: 20px 0; }
+      nav ul.show { display: flex; }
+      nav ul li { margin: 10px 0; }
+      .menu-toggle { display: block; }
+      .hero-content h1 { font-size: 2.4rem; }
+      .hero-content p { font-size: 1rem; }
+      .section-title { font-size: 2rem; }
+      .about-grid, .pricing-grid, .contact-wrap { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid .gallery-item { height: 280px; }
+      .contact-wrap { gap: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">Achieng Odhiambo</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#wedding">Wedding</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#nature">Nature</a></li>
+          <li><a href="#pricing">Prices</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Achieng Odhiambo</h1>
+      <p>Kisumu · Fine Art Photography</p>
+      <a href="#about" class="btn-hero">Discover My Work</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-img"></div>
+        <div class="about-text">
+          <p>I'm Achieng Odhiambo, a photographer rooted in the vibrant city of Kisumu, on the shores of Lake Victoria. My passion is capturing life's most authentic moments — the quiet joy, the wild celebration, the golden light over the lake. Every image I create tells a story of connection, place, and emotion.</p>
+          <p>From the bustling streets of Kisumu to the serene landscapes of the Rift Valley, I bring an artist's eye and a storyteller's heart to every frame. Whether it's a wedding, an event, or the raw beauty of nature, I'm here to preserve your memories with elegance and soul.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wedding -->
+  <section id="wedding" class="section-alt">
+    <div class="container">
+      <h2 class="section-title">Wedding Photography</h2>
+      <div class="photo-placeholder" style="background: linear-gradient(135deg, #d4c5b0 0%, #b8956a 50%, #8a7a60 100%); height: 420px; border-radius: 16px; margin-bottom: 30px;"></div>
+      <p>Your wedding day is a symphony of emotions — the nervous laughter, the tearful vows, the dance that never ends. I document it all with a fine-art approach, blending candid storytelling with timeless portraiture. Every gallery is a curated collection of your love story, delivered with care and artistry.</p>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events">
+    <div class="container">
+      <h2 class="section-title">Event Photography</h2>
+      <div class="photo-placeholder" style="background: linear-gradient(135deg, #c9b89e 0%, #a6896b 50%, #7d6a54 100%); height: 420px; border-radius: 16px; margin-bottom: 30px;"></div>
+      <p>Corporate gatherings, birthday celebrations, cultural festivals — whatever the occasion, I bring professional energy and an eye for detail. I work discreetly to capture authentic interactions, key moments, and the atmosphere that makes your event unique. High-quality images delivered fast.</p>
+    </div>
+  </section>
+
+  <!-- Nature Gallery -->
+  <section id="nature" class="section-alt">
+    <div class="container">
+      <h2 class="section-title">Nature Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item" style="background: linear-gradient(135deg, #f5a623 0%, #e07b1a 40%, #b85d0e 100%);">
+          <div class="gallery-overlay">Sunset Over Lake Victoria</div>
+        </div>
+        <div class="gallery-item" style="background: linear-gradient(135deg, #3f784c 0%, #2a5a36 50%, #1a3d24 100%);">
+          <div class="gallery-overlay">Kisumu Mangroves</div>
+        </div>
+        <div class="gallery-item" style="background: linear-gradient(135deg, #e8c87a 0%, #c9a04a 50%, #<div class="gallery-item" style="background: linear-gradient(135deg, #4d5360 0%, #37475e 50%, #263444 100%);">
+          <div class="gallery-overlay">Rift Valley Dawn</div>
+        </div>
+      </div>
+    </section>
+    <section id="prices" class="section">
+      <h2 class="section-title">Prices</h2>
+      <ul class="price-list">
+        <li>
+          <span class="price-heading">Weddings</span>
+          <span class="price-value">KSh 45,000</span>
+          <ul class="price-details">
+            <li>8 hour coverage</li>
+            <li>Edited gallery (50+ edited images)</li>
+            <li>USB with full resolution images</li>
+          </ul>
+        </li>
+        <li>
+          <span class="price-heading">Events</span>
+          <span class="price-value">KSh 15,000</span>
+          <ul class="price-details">
+            <li>4 hour coverage</li>
+            <li>200+ photos in online gallery</li>
+            <li>Access to full-resolution images via online gallery</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section id="contact" class="section">
+      <h2 class="section-title">Get in Touch</h2>
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" id="submit-btn">Send Message</button>
+      </form>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <p>&copy; 2023 Achieng Odhiambo. All rights reserved.<br>Design by <a href="https://www.themeselection.com/" target="_blank">Themes Selection</a></p>
+      </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/3db604b941.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js" integrity="sha512-YWzhkL2LsbcEz3u059Cu8rzU16P59y76TgvQmmm PoWIOoGnPI9P+NTMuGqK42QW1kCnw2QVdW7ZXWg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/2.0.0/quill.js" integrity="sha512-wR/n7hBLLuz8yFHEN1VBLAa2cNqCEAFGCFNjyVbyGnHQzNY50jNVALYFRpq4QJc7recb3qEQdo+MzpFUD9JCMxw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoint/4.3.2/waypoint.min.js" integrity="sha512-TYMMntqvNCylvuM6xXhSfjDfyA5E7XVVLTzrlaqms+kyvRbqz/oodzOc3aZCMthnVdngUVDaejAo6qmpXAywwFw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-k/FP7uY29YwVTVRaZl7ixyijuIt2D2i+fja7RlBbGeYMSxa_ebAEHWnEDxVYlOMQV9kw1W1WrPyonS4ixrk0RsA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-bZDT+DGhPQNZyX aktG+BixFyvhVlW4VcZyRlqQD42LUxpNP8zrjuMzHxLbY9U/4zcKX8nJnq3aGixeCXQNh1kw5kQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollReveal/4.0.0/scrollreveal.min.js" integrity="sha512-ZeKHrlQpMGBcafQHPY45OLCLWJIOE83HYQP4ZShF1IIG1SuyL3OSKSuXjRfVjdl2o1c84o6MUhKgfyZWdHIlC8A==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/5.0.2/tooltipster.min.js" integrity="sha512-jhYEKY2mNnXPzdLr+1Z/QM7o1SeBgA8Nak/6j7cnf76L0gjuT+DibGd5IGlf7A/b1OmFJQscp9vWqHG6XdwaDgw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster-pointing/3.0.1/tooltipster.pointing.min.js" integrity="sha512-SxYW0kgOX5r4kPLqUvGEXhVpOOQyuZ2jB+O33HV9ipOKpVQi4818YFaC1qrJEcWbkK3N4MujLVQyMv02aU7WKvA==" crossorigin="anonymous"></script>
+    <script>
+      // Initialize the Masonry layout
+      const masonry = new Masonry('.gallery-grid', {
+        itemSelector: '.gallery-item',
+        columnWidth: '.gallery-item',
+        percentPosition: true
+      });
+      
+      // Initialize ScrollReveal for animations
+      const reveal = ScrollReveal();
+      
+      // Handle form submission
+      const contactForm = document.getElementById('contact-form');
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(e.target))
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Message sent successfully! We will get back to you soon.');
+          } else {
+            alert('Oops, something went wrong. Please try again later.');
+          }
+        })
+        .catch(error => console.error('Form submission failed:', error));
+      });
+      
+      // Enable tooltipster on gallery images
+      const galleryImages = document.querySelectorAll('.gallery-item img');
+      galleryImages.forEach(image => {
+        const tooltipText = `${image.alt}`;
+        const tooltipOptions = { theme: 'tooltipster-shadow', animation: 'fade' };
+        new Tooltipster(image, tooltipOptions).target('mouseover');
+      });
+      
+      // Enable highlighting on navigation links
+      const navLinks = document.querySelectorAll('.section-title a');
+      navLinks.forEach(link => {
+        link.addEventListener('mouseover', () => {
+          const section = document.getElementById(link.hash.slice(1));
+          const yOffset = section.offsetTop - 120; // Adjust based on height and position
+          
+          // Highlight the section by changing its background color
+          const highlightedClass = 'highlighted';
+          section.classList.add(highlightedClass);
+          
+          // Animate the highlight
+          const animateHighlight = () => {
+            requestAnimationFrame(() => {
+              requestAnimationFrame(animateHighlight);
+              const opacity = Math.sin(Date.now() / 1000) * 0.5 + 0.5;
+              section.style.filter = `blur(${2 * opacity}px)`;
+            });
+          };
+          
+          animateHighlight();
+        });
+        
+        link.addEventListener('mouseout', () => {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              section.classList.remove(highlightedClass);
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

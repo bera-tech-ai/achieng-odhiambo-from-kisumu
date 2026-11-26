@@ -1,0 +1,22 @@
+{
+  "name": "achieng-odhiambo-photography",
+  "version": "1.0.0",
+  "description": "Elegant portfolio for photographer Achieng Odhiambo from Kisumu",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "photography",
+    "portfolio",
+    "kisumu",
+    "wedding",
+    "events",
+    "nature"
+  ],
+  "author": "Achieng Odhiambo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
